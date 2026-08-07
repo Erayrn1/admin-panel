@@ -44,8 +44,8 @@ const Register = ({ onRegisterSuccess }) => {
 
   return (
     <div className="register-container">
-      <div className="register-card">
-        <h1>Create Account</h1>
+      <div className="register-box">
+        <h2>Create Account</h2>
         <form onSubmit={handleRegister}>
           <div className="form-row">
             <div className="form-group">
@@ -102,12 +102,14 @@ const Register = ({ onRegisterSuccess }) => {
               required
             />
           </div>
-          {error && <div className="error-message">{error}</div>}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          <button type="submit" className="register-btn" disabled={loading}>
             {loading ? 'Creating Account...' : 'Register'}
           </button>
         </form>
-        <p>Already have an account? <a href="/login">Login</a></p>
+        <div className="register-footer">
+          <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
       </div>
     </div>
   );
