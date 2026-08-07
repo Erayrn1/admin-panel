@@ -29,8 +29,8 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgot-password-container">
-      <div className="forgot-password-card">
-        <h1>Forgot Password</h1>
+      <div className="forgot-password-box">
+        <h2>Forgot Password</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email Address</label>
@@ -42,13 +42,15 @@ const ForgotPassword = () => {
               required
             />
           </div>
-          {error && <div className="error-message">{error}</div>}
-          {message && <div className="success-message">{message}</div>}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          {message && <div className="success">{message}</div>}
+          <button type="submit" className="forgot-password-btn" disabled={loading}>
             {loading ? 'Sending...' : 'Send Reset Link'}
           </button>
         </form>
-        <p><a href="/login">Back to Login</a></p>
+        <div className="forgot-password-footer">
+          <p><a href="/login">Back to Login</a></p>
+        </div>
       </div>
     </div>
   );
