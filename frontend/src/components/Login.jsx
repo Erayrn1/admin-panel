@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Login.css';
+import '../Login.css';
 
 const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -34,8 +34,8 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-container">
-      <div className="login-card">
-        <h1>Admin Panel</h1>
+      <div className="login-box">
+        <h2>Admin Panel</h2>
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label>Email</label>
@@ -57,13 +57,15 @@ const Login = ({ onLoginSuccess }) => {
               required
             />
           </div>
-          {error && <div className="error-message">{error}</div>}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          <button type="submit" className="login-btn" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        <p><a href="/forgot-password">Forgot Password?</a></p>
-        <p>Don't have an account? <a href="/register">Register</a></p>
+        <div className="login-footer">
+          <p><a href="/forgot-password">Forgot Password?</a></p>
+          <p>Don't have an account? <a href="/register">Register</a></p>
+        </div>
       </div>
     </div>
   );
