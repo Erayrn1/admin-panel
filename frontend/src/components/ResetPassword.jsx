@@ -46,8 +46,8 @@ const ResetPassword = () => {
 
   return (
     <div className="reset-password-container">
-      <div className="reset-password-card">
-        <h1>Reset Password</h1>
+      <div className="reset-password-box">
+        <h2>Reset Password</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>New Password</label>
@@ -71,9 +71,9 @@ const ResetPassword = () => {
               required
             />
           </div>
-          {error && <div className="error-message">{error}</div>}
-          {message && <div className="success-message">{message}</div>}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          {message && <div className="success">{message}</div>}
+          <button type="submit" className="reset-password-btn" disabled={loading}>
             {loading ? 'Resetting...' : 'Reset Password'}
           </button>
         </form>
